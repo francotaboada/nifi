@@ -23,6 +23,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Compile Test
-      run: mvn test-compile -pl nifi-record -am
+      run: mvn test-compile -pl nifi-commons/nifi-record -am
     - name: First Test
-      run: mvn -pl nifi-record test -Dtest=org.apache.nifi.serialization.record.TestMapRecord#testDefaultValueWithAliasValue
+      run: mvn -pl nifi-commons/nifi-record edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.nifi.serialization.record.TestMapRecord#testDefaultValueWithAliasValue -DnondexRuns=10
