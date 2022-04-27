@@ -23,6 +23,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Compile Test
-      run: mvn test-compile -pl . -am
+      run: mvn test-compile -pl nifi-record -am
     - name: First Test
-      run: mvn -pl . test -Dtest=com.google.cloud.teleport.bigtable.CassandraRowMapperFnTest#testMapDoubleColumn
+      run: mvn -pl nifi-record test -Dtest=org.apache.nifi.serialization.record.TestMapRecord#testDefaultValueWithAliasValue
